@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Past Papers | TechHub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Tech<span>Hub</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    </nav>
+</header>
+<main class="papers-page">
+
+  <h1>Past Papers</h1>
+  <p class="subtitle">GCE A/L Technology Stream</p>
+
+  <!-- ICT -->
+  <section class="subject">
+    <h2>ICT</h2>
+
+    <div class="paper-row">
+      <span>2024</span>
+      <a href="https://drive.google.com/file/d/1ys469v329zvfdjca3nBxTEAWRO086WJC/view?usp=sharing" class="btn">Past Paper</a>
+      <a href="https://drive.google.com/file/d/1vZ2curEpm4YCaiPVJLTd6660FkhKuF83/view?usp=sharing" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2023</span>
+      <a href="https://drive.google.com/file/d/1mKgLmEFekLWrelcqiR8yaTfzN4hszaCL/view?usp=drive_link" class="btn">Past Paper</a>
+      <a href="https://drive.google.com/file/d/1_2Rz_-Q0dlEEgfH5JGOx6gMYpfSKxZJ7/view?usp=sharing" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2022</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2021</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2020</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2019</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2018</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2017</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2016</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2015</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2014</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2013</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2012</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+
+    <div class="paper-row">
+      <span>2011</span>
+      <a href="#" class="btn">Past Paper</a>
+      <a href="#" class="btn outline">Marking Scheme</a>
+    </div>
+  </section>
+</main>
+<p align="center">Special Thanks To Ravidu Sir ( ictfromabc.com ) For Allowing Me To Use Past Papers.</p>
+<footer class="footer">
+  &copy 2025 Tech Hub | Implemented by Kavishka Prabashana
+</footer>
+
+<script type="module">
+import { createClient } from 
+"https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const supabase = createClient(
+  "https://mlzucabprhxfdvafeioi.supabase.co",
+  "sb_publishable_Lk_NbEpSK2AarAkO5ex0_w_FEOYTH1F"
+);
+
+const { data, error } = await supabase
+  .from("past_papers")
+  .select("*")
+  .order("year", { ascending: false });
+
+let html = "";
+
+data.forEach(paper => {
+  html += `
+    <div class="paper-card">
+      <h3>${paper.subject} - ${paper.year}</h3>
+      <p>Paper ${paper.paper}</p>
+      <a href="${paper.file_url}" target="_blank">
+        Download PDF
+      </a>
+    </div>
+  `;
+});
+
+document.getElementById("papers").innerHTML = html;
+</script>
+
+
+</body>
+</html>

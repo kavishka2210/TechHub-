@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<script type="module">
+import { createClient } from 
+"https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const supabase = createClient(
+  "https://mlzucabprhxfdvafeioi.supabase.co",
+  "sb_publishable_Lk_NbEpSK2AarAkO5ex0_w_FEOYTH1F"
+);
+</script>
+
+<form onsubmit="sendData(); return false;">
+  <input type="text" id="name" placeholder="Name">
+  <input type="email" id="email" placeholder="Email">
+  <button>Submit</button>
+</form>
+
+
+<header class="header">
+  <div class="logo">Tech<span>Hub</span></div>
+</header>
+
+<section class="hero">
+  <h1 align="center">A/L Past Papers</h1>
+  <h4 align="center">Simple resources for AL Technology  students</h4>
+  
+  <footer class="footer">
+ <section class="papers">
+  <h2>Past Papers</h2>
+
+  <div class="paper-grid">
+    <div class="paper-card">
+      <h3>Science for Technology</h3>
+      <p>GCE A/L<br>වසර 10 ක SFT A/L ප්‍රශ්ණ පත්‍ර විවරණ සමග</p>
+      <a href="sftpapers.html" class="download">Get Papers</a>
+      </div>
+
+    <div class="paper-card">
+      <h3>Engineering Technology</h3>
+      <p>GCE A/L<br>වසර 10 ක ET A/L ප්‍රශ්ණ පත්‍ර විවරණ සමග</p>
+      <a href="etpapers.html" class="download">Get Papers</a>
+    </div>
+
+    <div class="paper-card">
+      <h3>Information and Communications Technology</h3>
+      <p>GCE A/L<br>වසර 15 ක ICT A/L ප්‍රශ්ණ පත්‍ර විවරණ සමග</p>
+      <a href="ictpapers.html" class="download">Get Papers</a>
+    </div>
+  </div>
+</section>
+<h5>&copy 2025 TechHub | Implemented by Kavishka Prabashana</h5>
+</footer>
+
+</body>
+</html>

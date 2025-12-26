@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: #0b0b0b;
+  color: #fff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.logo span {
+  color: red;
+}
+
+.header a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 25px;
+  transition: color 0.3s;
+}
+
+.header a:hover {
+  color: red;
+}
+
+/* Hero */
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.hero p {
+  color: #aaa;
+  margin: 15px 0 30px;
+  max-width: 400px;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+.primary {
+  background: red;
+  color: #fff;
+}
+
+.primary:hover {
+  opacity: 0.85;
+}
+
+.outline {
+  border: 1px solid red;
+  color: red;
+}
+
+.outline:hover {
+  background: red;
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.papers {
+  padding: 60px 40px;
+}
+
+.papers h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.paper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.paper-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 25px;
+  transition: transform 0.25s, border 0.25s;
+}
+
+.paper-card:hover {
+  transform: translateY(-5px);
+  border-color: red;
+}
+
+.paper-card h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.paper-card p {
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.download {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid red;
+  border-radius: 6px;
+  color: red;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.download:hover {
+  background: red;
+  color: #fff;
+}
+
+
+/* Page */
+.papers-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.papers-page h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 40px;
+}
+
+/* Subject section */
+.subject {
+  margin-bottom: 40px;
+}
+
+.subject h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-left: 4px solid #444;
+  padding-left: 10px;
+}
+
+/* Paper row */
+.paper-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #222;
+}
+
+.paper-row span {
+  width: 60px;
+  color: #aaa;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid #444;
+}
+
+.btn.outline:hover {
+  background: #222;
+}
+
+/* Active nav */
+nav a.active {
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .paper-row {
+    flex-wrap: wrap;
+  }
+
+  .paper-row span {
+    width: 100%;
+  }
+}
+
+/* Page transition */
+body {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+
